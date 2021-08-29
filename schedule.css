@@ -1,0 +1,148 @@
+:root {
+    /* Colors */
+    --light-style: #fff;
+    --gray: #DADCE0;
+    --strong-gray: #70757A;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    font-size: 62.5%;
+    font-family: "DM Sans", sans-serif;
+    scroll-behavior: smooth;
+}
+
+.main-container{
+    display: grid;
+    height: 100vh;
+    grid-template-rows: 6.4rem 1fr;
+    grid-template-areas: "header" "calendar";
+}
+
+.header {
+    background-color: var(--container);
+    grid-area: header;
+    background-color: var(--light-style);
+    border-bottom: solid 1px var(--gray);
+    padding: 0 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header .left-items{
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+}
+
+.header .right-items{
+    display: flex;
+    gap: 5rem;
+}
+
+.header img {
+    width: 3.2rem;
+    height: 3.2rem;
+}
+
+.header select {
+    border: 1px solid var(--gray);
+    padding: .8rem 3.4rem .8rem 1.2rem;
+    border-radius: 0.8rem;
+    font-size: 1.4rem;
+    appearance: none;
+    background-image: url("./assets/icons/arrow_drop_down.svg");
+    background-repeat: no-repeat;
+    background-position: right 0.5rem center;
+    outline: none;
+}
+
+.header button {
+    border: 1px solid var(--gray);
+    padding: .8rem 1.4rem;
+    border-radius: 0.8rem;
+    font-size: 1.4rem;
+    background-color: transparent;
+}
+
+.header span {
+    font-size: 2.2rem;
+}
+
+
+.calendar {
+    grid-area: calendar;
+    padding: 0 2.4rem;
+}
+
+/* CALENDAR WEEK */
+
+.calendar-week {
+    display: grid;
+    grid-template-rows: 10rem 1fr;
+    grid-template-areas: "calendar-week-header" "calendar-week-body";
+}
+
+/* CALENDAR WEEK HEADER*/
+
+.calendar-week-header {
+    display: grid;
+    grid-template-columns: 4rem repeat(7,minmax(8rem, 1fr));
+    color: var(--strong-gray);
+}
+
+.calendarDay span {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.calendarDay strong {
+    font-size: 2.6rem;
+    font-weight: 500;
+}
+
+/* CALENDAR WEEK BODY*/
+
+.fix-calendar-body {
+    height: 100%;
+}
+
+.calendar-week-body {
+    display: grid;
+    grid-template-columns: 4rem repeat(7,minmax(8rem, 1fr));
+    grid-template-rows: 7rem repeat(23,minmax(6.4rem, auto));
+    overflow: auto;
+    height: 80vh;
+}
+
+.timezoneCell {
+    display: flex;
+    align-items: flex-end;
+    color: var(--strong-gray);
+    font-size: 1.2rem;
+}
+
+.calendarDay {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+.taskCell {
+    border: 1px solid var(--gray);
+    padding: 0.25rem;
+}
+
+.hourCell {
+    color: var(--strong-gray);
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+    top: 5px;
+    font-size: 1.2rem;
+  }
