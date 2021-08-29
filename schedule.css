@@ -23,7 +23,7 @@ html {
     grid-template-areas: "header" "calendar";
 }
 
-.header {
+ .header {
     background-color: var(--container);
     grid-area: header;
     background-color: var(--light-style);
@@ -36,16 +36,26 @@ html {
 
 .header .left-items{
     display: flex;
-    gap: 5rem;
+    gap: 1rem;
     align-items: center;
 }
 
 .header .right-items{
     display: flex;
-    gap: 5rem;
+    gap: 1rem;
 }
 
-.header img {
+.header .left-items img {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.header .left-items span {
+    display: none;
+    font-size: 2.2rem;
+}
+
+.header .right-items img {
     width: 3.2rem;
     height: 3.2rem;
 }
@@ -70,18 +80,13 @@ html {
     background-color: transparent;
 }
 
-.header span {
-    font-size: 2.2rem;
-}
-
-
 .calendar {
     grid-area: calendar;
     padding: 0 2.4rem;
 }
 
-/* CALENDAR WEEK */
 
+/* CALENDAR WEEK */
 .calendar-week {
     display: grid;
     grid-template-rows: 10rem 1fr;
@@ -92,7 +97,7 @@ html {
 
 .calendar-week-header {
     display: grid;
-    grid-template-columns: 4rem repeat(7,minmax(8rem, 1fr));
+    grid-template-columns: 4rem repeat(7,1fr);
     color: var(--strong-gray);
 }
 
@@ -114,7 +119,7 @@ html {
 
 .calendar-week-body {
     display: grid;
-    grid-template-columns: 4rem repeat(7,minmax(8rem, 1fr));
+    grid-template-columns: 4rem repeat(7,1fr);
     grid-template-rows: 7rem repeat(23,minmax(6.4rem, auto));
     overflow: auto;
     height: 80vh;
@@ -145,4 +150,22 @@ html {
     position: relative;
     top: 5px;
     font-size: 1.2rem;
-  }
+} 
+
+@media (min-width: 400px) {
+    .header .left-items{
+        gap: 5rem;
+    }
+    .header .right-items{
+        gap: 5rem;
+    }
+}
+
+@media (min-width: 650px) {
+    .header .left-items span {
+        display: block;
+    }
+}
+
+
+
